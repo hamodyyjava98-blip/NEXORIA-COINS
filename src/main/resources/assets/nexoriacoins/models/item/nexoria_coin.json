@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "nexoriacoins:item/nexoria_coin_clear"
+  }
+}
