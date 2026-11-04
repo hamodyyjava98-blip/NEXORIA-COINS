@@ -1,11 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "GGG",
+    "DGD",
     "GAG",
-    "GGG"
+    "DGD"
   ],
   "key": {
+    "D": "minecraft:diamond",
     "G": "minecraft:gold_ingot",
     "A": "minecraft:amethyst_shard"
   },
