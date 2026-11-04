@@ -1,19 +1,25 @@
 plugins {
     id 'java-library'
+    id 'maven-publish'
     id 'net.neoforged.moddev' version '2.0.148'
+    id 'idea'
 }
 
-version = project.mod_version
-group = project.mod_group_id
+version = mod_version
+group = mod_group_id
 
 base {
-    archivesName = project.mod_id
+    archivesName = mod_id
 }
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
 
 neoForge {
-    version = project.neo_version
+    version = neo_version
 
     runs {
         client {
@@ -21,33 +27,12 @@ neoForge {
         }
         server {
             server()
-            programArgument '--nogui'
         }
     }
 
     mods {
         "${mod_id}" {
-            sourceSet(sourceSets.main)
+            sourceSet sourceSets.main
         }
-    }
-}
-
-dependencies {}
-
-tasks.withType(ProcessResources).configureEach {
-    def replaceProperties = [
-        minecraft_version: minecraft_version,
-        minecraft_version_range: minecraft_version_range,
-        neo_version: neo_version,
-        mod_id: mod_id,
-        mod_name: mod_name,
-        mod_license: mod_license,
-        mod_version: mod_version
-    ]
-
-    inputs.properties replaceProperties
-
-    filesMatching(['META-INF/neoforge.mods.toml']) {
-        expand replaceProperties
     }
 }
