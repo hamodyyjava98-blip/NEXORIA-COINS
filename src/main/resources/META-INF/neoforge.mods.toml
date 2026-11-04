@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="nexoriacoins"
+version="1.0.0"
+displayName="NEXORIA COINS"
+description='''
+A futuristic currency mod for NEXORIA.
+'''
+
+[[dependencies.nexoriacoins]]
+modId="neoforge"
+type="required"
+versionRange="[26.1.2.125,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.nexoriacoins]]
+modId="minecraft"
+type="required"
+versionRange="[26.1.2]"
+ordering="NONE"
+side="BOTH"
